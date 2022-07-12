@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Specular.gdshader" type="Shader" id=1]
+[ext_resource path="res://Assets/Icon/icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Specular Icon/specular_icon_n.png" type="Texture" id=3]
+[ext_resource path="res://Assets/light.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Specular Icon/specular_icon.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Icon/icon_n.png" type="Texture" id=6]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/intensity = Color( 1000, 1000, 1000, 1000 )
+
+[node name="World" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 263, 185 )
+scale = Vector2( 0.756836, 0.756836 )
+texture = ExtResource( 4 )
+range_height = 35.6
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 220, 183 )
+texture = ExtResource( 2 )
+normal_map = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( 307, 150 )
+texture = ExtResource( 5 )
+normal_map = ExtResource( 3 )
